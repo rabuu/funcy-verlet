@@ -102,4 +102,11 @@ packages:
       sha256: e44f2e2dba15466712f8a5c523bdccb2e6c7e70506a23e6d45766f82fcbbd4b0
   original:
     hackage: half-0.3.1
+- completed:
+    hackage: Vec-1.0.5@sha256:6548eda62d2c7caa45a1cdfffe3ce512a0f223da80ca3a0eb79b8f8bb544026c,1777
+    pantry-tree:
+      size: 432
+      sha256: debecb1467920fab2b9153c9e792958c7ccb0fda58f974e9146c9f30ea93e9b5
+  original:
+    hackage: Vec-1.0.5
 snapshots: []

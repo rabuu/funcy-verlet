@@ -54,6 +54,7 @@ extra-deps:
   - text-1.2.5.0
   - fixed-0.3
   - half-0.3.1
+  - Vec-1.0.5
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

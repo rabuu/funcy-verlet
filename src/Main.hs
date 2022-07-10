@@ -2,6 +2,16 @@ module Main where
 
 import Graphics.Gloss
 
--- display a circle
-main :: IO ()
-main = display (InWindow "Funcy Verlet" (200, 200) (10, 10)) white (Circle 80)
+window :: Display
+window = InWindow "Funcy Verlet" (200, 200) (10, 10)
+
+background :: Color
+background = white
+
+fps :: Int
+fps = 60
+
+drawing :: Picture
+drawing = circleSolid 80
+
+main = putStrLn "Hello, World!"

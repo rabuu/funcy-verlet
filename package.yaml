@@ -15,6 +15,7 @@ dependencies:
 - base >= 4.8 && < 5
 - gloss == 1.13.2.2
 - gloss-rendering == 1.13.*
+- Vec == 1.0.5
 
 executables:
   funcy-verlet-exe:
