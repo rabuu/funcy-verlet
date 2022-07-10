@@ -1,7 +1,7 @@
 module Object where
 
-import Data.Vec as V
-import Graphics.Gloss (Color)
+import Data.Vec as V hiding (translate)
+import Graphics.Gloss (Picture (Circle), circleSolid, color, red, translate)
 
 data Object = Object
   { pos :: Vec2F,
@@ -10,8 +10,8 @@ data Object = Object
   }
   deriving (Show)
 
-updateObjPos :: Object -> Float -> Object
-updateObjPos obj dt =
+updateObjPos :: Float -> Object -> Object
+updateObjPos dt obj =
   Object
     { pos = pos',
       old_pos = old_pos',
@@ -25,3 +25,10 @@ updateObjPos obj dt =
 
 accelerateObj :: Object -> Vec2F -> Object
 accelerateObj obj accAdd = obj {acc = acc'} where acc' = acc obj + accAdd
+
+renderObj :: Object -> Picture
+renderObj obj = translate x y $ color col $ circleSolid 30
+  where
+    x = V.head $ unpack $ pos obj
+    y = V.last $ unpack $ pos obj
+    col = red
