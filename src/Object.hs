@@ -10,6 +10,9 @@ data Object = Object
   }
   deriving (Show)
 
+objRadius :: Float
+objRadius = 50
+
 updateObjPos :: Float -> Object -> Object
 updateObjPos dt obj =
   Object
@@ -27,7 +30,7 @@ accelerateObj :: Object -> Vec2F -> Object
 accelerateObj obj accAdd = obj {acc = acc'} where acc' = acc obj + accAdd
 
 renderObj :: Object -> Picture
-renderObj obj = translate x y $ color col $ circleSolid 30
+renderObj obj = translate x y $ color col $ circleSolid objRadius
   where
     x = V.head $ unpack $ pos obj
     y = V.last $ unpack $ pos obj
