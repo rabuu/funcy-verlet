@@ -31,7 +31,7 @@ applyConstraintToObj obj consPos radius = if dist > (radius - objRadius) then ob
     toObj = pos obj - consPos
     dist = sqrt $ fold (+) $ V.map (\x -> x * x) $ unpack toObj
     n = pack $ V.map (\x -> x / dist) $ unpack toObj
-    pos' = consPos + (pack $ V.map (\x -> x * (dist - objRadius)) $ unpack n)
+    pos' = consPos + (pack $ V.map (\x -> x * (radius - objRadius)) $ unpack n)
 
 applyConstraintToWorld :: World -> Vec2F -> Float -> World
 applyConstraintToWorld world consPos radius = World $ P.map (\o -> applyConstraintToObj o consPos radius) $ objs world
